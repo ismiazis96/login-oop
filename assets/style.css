@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    width: 80%;
+    margin: 20px auto;
+}
+
+header{
+    border-bottom: 2x solid grey;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+footer{
+    border-top: 2px solid grey;
+    padding-top: 10px;
+    margin-top: 50px;
+}
