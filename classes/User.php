@@ -60,4 +60,11 @@ class User{
         if($this->_db->update('users', $fields, $id)) return true;
         else return false;
     }
+
+    public function get_users()
+    {
+        // print_r($this->_db->get_info('users'));
+        // die();
+        return $this->_db->get_info('users');
+    }
 }

@@ -77,17 +77,28 @@ class Database {
         return $this->run_query($query,'masalah saat update data');
     }
 
-    public function get_info($table, $column, $value)
+    public function get_info($table, $column = '', $value = '')
     {
         if( !is_int($value) )
             $value = "'" .$value. "'";
 
-        $query = "SELECT * FROM $table WHERE $column = $value";
-        $result = $this->mysqli->query($query);
-        
-        while($row = $result->fetch_assoc()){
-            return $row;
-        }
+        if( $column != '' ){
+            $query = "SELECT * FROM $table WHERE $column = $value";
+            $result = $this->mysqli->query($query);
+            
+            while($row = $result->fetch_assoc()){
+                return $row;
+            }
+        }  else {
+            $query = "SELECT * FROM $table";
+            $result = $this->mysqli->query($query);
+
+            while($row = $result->fetch_assoc()){
+                $results[] = $row;
+            }
+            return $results;
+        }  
+
     }
 
     public function run_query($query, $msg)
