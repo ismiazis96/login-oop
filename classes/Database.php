@@ -56,6 +56,27 @@ class Database {
         return $this->run_query($query,'masalah saat memasukan data');
     }
 
+    public function update($table, $fields = array(), $id)
+    {
+        
+        $valueArrays = array();
+        $i = 0;
+        foreach($fields as $key=>$values){
+            if( is_int($values) ){
+                $valueArrays[$i] = $key . "=" . $this->escape($values);
+            } else {
+                $valueArrays[$i] = $key . "='" . $this->escape($values) ."'";
+            }
+            $i++;
+        }
+        $values = implode(", ", $valueArrays);
+        // contoh yang di inginkan
+        //UPDATE users SET username='ismi', password='123' WHERE id=1;
+        $query = "UPDATE $table SET $values WHERE id=$id";
+        //die($query);
+        return $this->run_query($query,'masalah saat update data');
+    }
+
     public function get_info($table, $column, $value)
     {
         if( !is_int($value) )

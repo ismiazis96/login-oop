@@ -54,4 +54,10 @@ class User{
             return die('Username tidak ditemukan');
         
     }
+
+    public function update_user($fields = array(), $id)
+    {
+        if($this->_db->update('users', $fields, $id)) return true;
+        else return false;
+    }
 }

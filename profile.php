@@ -17,13 +17,15 @@
     require_once 'templates/header.php';
 ?>
 <h2>Profile</h2>
-<h3>Hai <?= $user_data['username']; ?></h2>
+<h3>Hai <?= $user_data['username']; ?></h2><br>
+
 
 <!-- fungsi khusus admin role = 1 -->
 <?php if($user->is_admin( Session::get('username') )){ ?>
     Fungsi Khusus Admin
-<?php } ?>    
-
+    <?php } ?>    
+<br>
+<a href="change-password.php">Ganti Password</a>
 
 <?php require_once 'templates/footer.php'; ?>
 
