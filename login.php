@@ -51,27 +51,46 @@ if ( Input::get('submit') ){
 require_once 'templates/header.php';
 ?>
 
-<h2>Login disini</h2>
-<form action="login.php" method="post">
-    <label for="">Username :</label>
-    <input type="text" name="username"><br>
-
-    <label for="">Password :</label>
-    <input type="password" name="password"><br><br>
-
-    <input type="hidden" name="token" value="<?= Token::generate();?>">
-
-    <input type="submit" name="submit" value="Login Sekarang">
-
-    <?php if(!empty($errors)){?>
-        <div id="errors">
-            <?php foreach ($errors as $error){ ?>
-                <li><?php echo $error; ?></li>
-            <?php } ?>    
-        </div>
-    <?php } ?>    
 
 
-</form>
+<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form action="login.php" method="post">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="username" class="form-control input_user" value="" placeholder="username">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
+						</div>
+                        <input type="hidden" name="token" value="<?= Token::generate();?>">
+						<div class="d-flex justify-content-center mt-3 login_container">
+                            <input type="submit" name="submit" class="btn login_btn">
+                        </div>
+
+                        <?php if(!empty($errors)){?>
+                            <div id="errors">
+                                <?php foreach ($errors as $error){ ?>
+                                    <li><?php echo $error; ?></li>
+                                <?php } ?>    
+                            </div>
+                        <?php } ?>    
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <?php require_once 'templates/footer.php';

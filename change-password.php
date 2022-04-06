@@ -52,10 +52,10 @@
 
     require_once 'templates/header.php';
 ?>
-<h2>Ganti Password</h2>
-<h3>Hai <?= $user_data['username']; ?></h2>
+<!-- <h2>Ganti Password</h2> -->
+<h3 class="text-center">Hai <?= $user_data['username']; ?></h2>
 
-<form action="change-password.php" type="post">
+<!-- <form action="change-password.php" type="post">
     <label for="password">Password Lama</label>
     <input type="password" name="password"> <br>
 
@@ -75,7 +75,54 @@
             <?php } ?>    
         </div>
     <?php } ?>  
-</form>
+</form> -->
+
+<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+                        <h3>Ganti Password</h3>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form action="change-password.php" method="post">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_user" value="" placeholder="password">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password_baru" id="password_baru" class="form-control input_pass" value="" placeholder="password baru">
+						</div>
+                        <div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password_verify" id="password_verify" class="form-control input_pass" value="" placeholder="password verify">
+						</div>
+                        <input type="hidden" name="token" value="<?= Token::generate();?>">
+						<div class="d-flex justify-content-center mt-3 login_container">
+                            <input type="submit" name="submit" class="btn login_btn" value="Ganti Password">
+                        </div>
+
+                        <?php if(!empty($errors)){?>
+                            <div id="errors">
+                                <?php foreach ($errors as $error){ ?>
+                                    <li><?php echo $error; ?></li>
+                                <?php } ?>    
+                            </div>
+                        <?php } ?>    
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 <?php require_once 'templates/footer.php'; ?>
