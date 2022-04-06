@@ -2,9 +2,9 @@
 membuat auth multi user dengan php oop
 
 fitur tersebut meliputi
-- menu resgister
+- menu register
 - menu login
-- menu regsiter
+- menu profile
 - menu chance password
 
 default register ketika melakukan pendaftaran role nya menjadi pengguna.
