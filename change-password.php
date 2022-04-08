@@ -52,6 +52,7 @@
 
     require_once 'templates/header.php';
 ?>
+
 <!-- <h2>Ganti Password</h2> -->
 <h3 class="text-center">Hai <?= $user_data['username']; ?></h2>
 
@@ -82,7 +83,7 @@
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-                        <h3>Ganti Password</h3>
+                        <h3>Ubah Password</h3>
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
@@ -91,19 +92,19 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" class="form-control input_user" value="" placeholder="password">
+							<input type="password" name="password" class="form-control input_user" value="" placeholder="Password Lama">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password_baru" id="password_baru" class="form-control input_pass" value="" placeholder="password baru">
+							<input type="password" name="password_baru" id="password_baru" class="form-control input_pass" value="" placeholder="Password Baru">
 						</div>
                         <div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password_verify" id="password_verify" class="form-control input_pass" value="" placeholder="password verify">
+							<input type="password" name="password_verify" id="password_verify" class="form-control input_pass" value="" placeholder="Konformasi Password Baru">
 						</div>
                         <input type="hidden" name="token" value="<?= Token::generate();?>">
 						<div class="d-flex justify-content-center mt-3 login_container">

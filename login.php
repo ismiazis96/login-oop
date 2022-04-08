@@ -28,8 +28,13 @@ if ( Input::get('submit') ){
             // metode cek nama
             if ($user->cek_nama( Input::get('username') )){
                 if ($user->login_user( Input::get('username'), Input::get('password')) ){
-                    
-                    Session::flash('profile','Selamat anda berhasil login');
+                    $alert = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                Anda berhasil melakukann Login
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>';
+                    Session::flash('profile',$alert);
                     Session::set('username', Input::get('username'));
                     //header('Location: profile.php');
                     Redirect::to('profile');
@@ -53,7 +58,7 @@ require_once 'templates/header.php';
 
 
 
-<div class="container h-100">
+    <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">

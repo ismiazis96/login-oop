@@ -17,42 +17,30 @@
 <header>
     <div class="container">
 
-    
-    <!-- <h1>Belajar Auth di sekolahkoding</h1>
-    <nav>
-        <?php if (Session::exists('username') ){ ?>
-            <a href="logout.php">Logout</a>
-        <?php }else{ ?>
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
-        <?php } ?>
-        <a href="profile.php">Profile</a>
-    </nav> -->
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">AUTH</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <?php if (Session::exists('username') ){?>   
-                <li class="nav-item active">
-                    <a class="nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
-                </li>
-                <?php } else {?>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.php">Register</a>
-                </li>
-                <?php } ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">Profile</a>
-                </li>
-            </ul>
-        </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <?php if (Session::exists('username') ){?>   
+                    <li class="nav-item active">
+                        <a class="nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+                    </li>
+                    <?php } else {?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.php">Register</a>
+                    </li>
+                    <?php } ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.php">Profile</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </div>    
 </header>
